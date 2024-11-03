@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>New Message</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Guestbook App</a>
+    <div class="d-flex justify-content-center mt-4">
+      <a href="/guestbook" class="btn btn-primary mx-3">View Guestbook</a>
+      <a href="/newmessage" class="btn btn-success mx-3">Leave a New Message</a>
+      <a href="/ajaxmessage" class="btn btn-info mx-3">Use AJAX Message</a>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <h1>Leave a Message</h1>
+    <!-- Form will not submit the traditional way but through JavaScript -->
+    <form onsubmit="event.preventDefault(); submitMessage();">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" name="country" id="country" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" class="form-control" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Success message placeholder -->
+    <br>
+    <div id="successMessage" class="alert alert-info" style="display: none;">
+      Message submitted successfully!
+    </div>
+  </div>
+  <script src="newmessage.js"></script>
+</body>
+</html>

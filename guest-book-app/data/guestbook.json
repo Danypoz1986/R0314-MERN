@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1",
+    "username": "Pam",
+    "country": "Anguilla",
+    "date": "Thu Feb 22 2007 22:28:32 GMT+0200 (FLE Standard Time)",
+    "message": "How are you guys doing?"
+  },
+  {
+    "id": "2",
+    "username": "Sofia",
+    "country": "Macau",
+    "date": "Mon Apr 05 1993 09:12:01 GMT+0300 (FLE Daylight Time)",
+    "message": "Hello world!"
+  },
+  {
+    "id": "3",
+    "username": "Ashley",
+    "country": "Mauritania",
+    "date": "Sat Oct 19 1991 01:31:38 GMT+0300 (FLE Daylight Time)",
+    "message": "Greetings from Mauritania!"
+  },
+  {
+    "id": "4",
+    "username": "Baxter",
+    "country": "Malta",
+    "date": "Sat Sep 03 2005 08:52:38 GMT+0300 (FLE Daylight Time)",
+    "message": "Very nice!"
+  },
+  {
+    "id": "5",
+    "username": "Vickie",
+    "country": "Uganda",
+    "date": "Tue Jul 22 2003 08:53:21 GMT+0300 (FLE Daylight Time)",
+    "message": "Anyone from Africa here?"
+  },
+  {
+    "username": "Luigi",
+    "country": "Italy",
+    "message": "Mannaggia a Gesù Cristo e la Madonna",
+    "date": "3.11.2024 klo 16.37.50"
+  },
+  {
+    "username": "Mika",
+    "country": "Finland",
+    "message": "Mitä kuuluu?",
+    "date": "3.11.2024 klo 16.47.30"
+  },
+  {
+    "username": "Matti",
+    "country": "Sweden",
+    "message": "Heja Sverige!",
+    "date": "3.11.2024 klo 16.48.21"
+  },
+  {
+    "username": "Charles",
+    "country": "Great Britain",
+    "message": "Hello!",
+    "date": "3.11.2024 klo 23.35.54"
+  },
+  {
+    "username": "Mika",
+    "country": "Finland",
+    "message": "Moi!",
+    "date": "3.11.2024 klo 23.36.39"
+  }
+]
