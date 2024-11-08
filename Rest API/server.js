@@ -75,11 +75,10 @@ try{
 }
 });
 
-const server = app.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
 
-server.timeout = 120000;
 
 
 
