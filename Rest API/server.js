@@ -49,7 +49,7 @@ app.post('/api/add', async (req, res) => {
 });
 
 // Extra route
-app.pos('/api/addProjectWithQuery', async (req, res) => {
+app.post('/api/addProjectWithQuery', async (req, res) => {
     const {name, description, status} = req.query
     if (!name || !description) {
         return res.status(400).json({message: "Name and description are required"})
