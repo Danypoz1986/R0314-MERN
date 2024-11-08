@@ -54,15 +54,15 @@ app.post('/api/addProjectWithQuery', async (req, res) => {
     if (!name || !description) {
         return res.status(400).json({message: "Name and description are required"})
     }
-    const Project = new Project ({
+    const newProject = new Project ({
         name,
         description,
         status: status || 'ongoing'
     });
 
     try{
-        const newProject = await Project.save();
-        res.status(201).json(newProject);
+        const savedProject = await newProject.save();
+        res.status(201).json(savedProject);
     }catch (error){
         res.status(400).json({message: error.message});
     }
