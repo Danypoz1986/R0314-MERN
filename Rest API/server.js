@@ -48,6 +48,26 @@ app.post('/api/add', async (req, res) => {
     }
 });
 
+// Extra route
+app.pos('/api/addProjectWithQuery', async (req, res) => {
+    const {name, description, status} = req.query
+    if (!name || !description) {
+        return res.status(400).json({message: "Name and description are required"})
+    }
+    const Project = new Project ({
+        name,
+        description,
+        status: status || 'ongoing'
+    });
+
+    try{
+        const newProject = await Project.save();
+        res.status(201).json(newProject);
+    }catch (error){
+        res.status(400).json({message: error.message});
+    }
+});
+
 app.patch('/api/update/:id', async (req, res) => {
     try{
     const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, {
