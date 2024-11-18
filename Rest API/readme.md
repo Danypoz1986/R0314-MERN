@@ -51,7 +51,7 @@ Your server should now be running on ```bash http://localhost:<PORT>```
 
 ## Endpoints
 
-### Add a New Project (via Request Body)
+1. *Add a New Project (via Request Body)*
 ### POST ```/api/add```
 - **Body**: JSON
   ```bash
@@ -61,7 +61,7 @@ Your server should now be running on ```bash http://localhost:<PORT>```
         "status": "ongoing"
     }
    ```
-### Add a New Project (via Query Parameters)
+2. *Add a New Project (via Query Parameters)*
 ### POST ```/api/addProjectWithQuery?name=<name>&description=<description>&status=<status>```
 - **Query parameters**
     - ```name``` (required): Name of the project
@@ -69,15 +69,15 @@ Your server should now be running on ```bash http://localhost:<PORT>```
     - ```status``` (optional): Status of the project (default: ongoing)     
 
 
-### Retrieve All Projects
+3. *Retrieve All Projects*
 ### GET ```/api/getall```
 
-### Retrieve a Project by ID
+4. *Retrieve a Project by ID*
 ### GET ```/api/:id```
 - **Path Parameters**:
     - ```id```: The ID of the project 
 
-### Update a Project by ID
+5. *Update a Project by ID*
 ### POST ```/api/update/:id```
 -  **Path Parameters**:
     - ```id```: The ID of the project to update
@@ -89,18 +89,18 @@ Your server should now be running on ```bash http://localhost:<PORT>```
         "status": "completed"
     }
    ``` 
-### Delete a Project by ID
+6. *Delete a Project by ID*
 ### POST ```/api/delete:id```
 - **Path Parameters**:
     - ```id```: The ID of the project to delete
 
 ## Example Usage 
 ### Testin with Postman
-1. Use the **POST** ```/api/add endpoint to add a project.```
-2. Use the **GET** ```/api/getall endpoint to retrieve all projects.```
+1. Use the **GET** ```/api/add endpoint to add a project.```
+2. Use the **POST** ```/api/getall endpoint to retrieve all projects.```
 3. Use the **PATCH** ```/api/update/:id endpoint to update a specific project.```
 4. Use the **DELETE** ```/api/delete/:id endpoint to delete a project.```
-
+   
 ## Technologies Used
 - **Node.js**: Runtime environment
 - **Express.js**: Web framework
