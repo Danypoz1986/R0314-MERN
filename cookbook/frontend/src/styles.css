@@ -123,29 +123,6 @@ footer{
     }
 }
 
-  @media (max-width: 768px) {
-    form.container {
-      padding: 10px;
-      margin: 0 auto;
-      max-height: 70vh; /* Restrict the height of the form */
-      overflow-y: auto; /* Add a scrollbar if needed */
-    }
-  
-    form.container .form-control,
-    form.container .form-select {
-      font-size: 14px; /* Smaller font size for inputs */
-      padding: 6px; /* Reduce padding for inputs */
-    }
-  
-    form.container button {
-      font-size: 14px;
-      padding: 8px 12px; /* Reduce button padding */
-    }
-  
-    header, footer {
-      font-size: 14px;
-    }
-  }
   
   .form-wrapper {
     display: flex;
@@ -158,8 +135,16 @@ footer{
   
   @media (max-width: 768px) {
     .form-wrapper {
-      padding: 10px;
+      padding: 0px;
     }
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%; /* Fit the height of the screen */
+        overflow-y: auto; /* Scroll if content exceeds height */
+      }
   }
   
   
