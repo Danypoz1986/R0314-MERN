@@ -5,22 +5,22 @@ import "../styles.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [editingRecipe, setEditingRecipe] = useState(null);
-  const [alertMessage, setAlertMessage] = useState('');
+  const [recipes, setRecipes] = useState([]); // List of recipes
+  const [editingRecipe, setEditingRecipe] = useState(null); // Recipe being edited
+  const [alertMessage, setAlertMessage] = useState(''); // Message for user alerts
   const [alertType, setAlertType] = useState(''); // 'success' or 'danger'
-  const [showAlert, setShowAlert] = useState(false);
-  const [isEditingMode, setIsEditingMode] = useState(false); // Flag for editing mode
+  const [showAlert, setShowAlert] = useState(false); // Display alert
+  const [isEditingMode, setIsEditingMode] = useState(false); // Editing mode flag
 
   const location = useLocation();
   const navigate = useNavigate();
-  const isEditing = Boolean(location.state?.recipe);
+  const isEditing = Boolean(location.state?.recipe); // Check if a recipe is being edited
 
   useEffect(() => {
-    document.title = "Cookbook - Home"; // Set the title here
+    document.title = "Cookbook - Home"; // Set page title
   }, []);
 
-  // Set editingRecipe from navigation state or reset when the page loads
+  // Handle recipe editing state
   useEffect(() => {
     if (isEditing) {
       setEditingRecipe(location.state.recipe);
@@ -33,7 +33,7 @@ const HomePage = () => {
 
   const handleNavigation = (path) => {
     if (isEditingMode) {
-      // Show confirmation before navigating away
+      // Confirm before navigating away with unsaved changes
       if (window.confirm("You have unsaved changes. Are you sure you want to leave?")) {
         setIsEditingMode(false); // Reset unsaved changes flag
         navigate(path); // Navigate to the new path
@@ -45,13 +45,13 @@ const HomePage = () => {
 
   const fetchRecipes = async () => {
     const data = await getRecipes();
-    setRecipes(data);
+    setRecipes(data); // Load recipes from the backend
   };
 
   const handleAddRecipe = async (newRecipe) => {
     try {
-      await addRecipe(newRecipe);
-      fetchRecipes();
+      await addRecipe(newRecipe); // Add recipe via API
+      fetchRecipes(); // Refresh recipe list
       triggerAlert('Recipe added successfully!', 'success');
     } catch (error) {
       triggerAlert('Failed to add recipe. Please try again.', 'danger');
@@ -60,9 +60,9 @@ const HomePage = () => {
 
   const handleEditRecipe = async (updatedRecipe) => {
     try {
-      await updateRecipe(editingRecipe._id, updatedRecipe);
-      setEditingRecipe(null); // Clear the form after updating
-      fetchRecipes();
+      await updateRecipe(editingRecipe._id, updatedRecipe); // Update recipe via API
+      setEditingRecipe(null); // Clear editing state
+      fetchRecipes(); // Refresh recipe list
       triggerAlert('Recipe updated successfully!', 'success');
     } catch (error) {
       triggerAlert('Failed to update recipe. Please try again.', 'danger');
@@ -72,7 +72,7 @@ const HomePage = () => {
   const triggerAlert = (message, type) => {
     setAlertMessage(message);
     setAlertType(type);
-    setShowAlert(true);
+    setShowAlert(true); // Display alert
     // Hide alert after 3 seconds
     setTimeout(() => {
       setShowAlert(false);
@@ -116,13 +116,13 @@ const HomePage = () => {
         <div className="row justify-content-center">
           <div className="col-md-6">
             <RecipeForm
-              onSubmit={editingRecipe ? handleEditRecipe : handleAddRecipe}
-              initialData={editingRecipe}
+              onSubmit={editingRecipe ? handleEditRecipe : handleAddRecipe} // Decide whether to add or edit
+              initialData={editingRecipe} // Prefill form if editing
               onReset={() => {
                 setEditingRecipe(null);
-                setIsEditingMode(false); // No unsaved changes after reset
+                setIsEditingMode(false); // Reset editing mode
               }}
-              onChange={() => setIsEditingMode(true)}
+              onChange={() => setIsEditingMode(true)} // Mark form as dirty
             />
           </div>
         </div>
