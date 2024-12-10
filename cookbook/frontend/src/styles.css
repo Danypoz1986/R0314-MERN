@@ -63,7 +63,7 @@ header h1{
 footer{
     background: linear-gradient(to right, #FFD700, #FFB347);
     bottom: 0px;
-    position: absolute;
+    position: fixed;
     width: 100%;
 }
 
