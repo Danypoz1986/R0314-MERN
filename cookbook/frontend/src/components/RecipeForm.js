@@ -29,6 +29,7 @@ const RecipeForm = ({ onSubmit, initialData, onChange }) => {
   };
 
   return (
+  <div class="form-wrapper">
     <form onSubmit={handleSubmit} className="container mt-4">
       <div className="mb-3">
         <label htmlFor="title" className="form-label">Title</label>
@@ -101,6 +102,7 @@ const RecipeForm = ({ onSubmit, initialData, onChange }) => {
       </div>
       <button type="submit" className="btn btn-primary">Save Recipe</button>
     </form>
+  </div>
   );
 };
 
