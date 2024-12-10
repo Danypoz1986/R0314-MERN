@@ -49,6 +49,7 @@ const HomePage = () => {
   };
 
   const handleAddRecipe = async (newRecipe) => {
+    setIsEditingMode(false);
     try {
       await addRecipe(newRecipe); // Add recipe via API
       fetchRecipes(); // Refresh recipe list
