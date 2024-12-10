@@ -76,6 +76,6 @@ The Cookbook Application is a full-stack web project that allows users to create
 - Backend: Render
 
 ## Additional Resources
-- [Video presentation]()
-- [Project report]()
+- [Video presentation](https://youtu.be/PIcTUJnKgnA)
+- [Project report](https://storage.googleapis.com/fullstack3/Project%203%20REACT%20front-end.docx)
 - [App webpage](https://cookbook-kn8f.onrender.com)
