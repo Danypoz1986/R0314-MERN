@@ -16,6 +16,10 @@ const HomePage = () => {
   const navigate = useNavigate();
   const isEditing = Boolean(location.state?.recipe);
 
+  useEffect(() => {
+    document.title = "Cookbook - Home"; // Set the title here
+  }, []);
+
   // Set editingRecipe from navigation state or reset when the page loads
   useEffect(() => {
     if (isEditing) {
@@ -25,8 +29,7 @@ const HomePage = () => {
       setEditingRecipe(null);
       setIsEditingMode(false);
     }
-  }, [location.state]);
-  
+  }, [isEditing, location.state]);
 
   const handleNavigation = (path) => {
     if (isEditingMode) {
@@ -46,7 +49,6 @@ const HomePage = () => {
   };
 
   const handleAddRecipe = async (newRecipe) => {
-    setIsEditingMode(false);
     try {
       await addRecipe(newRecipe);
       fetchRecipes();
@@ -88,8 +90,8 @@ const HomePage = () => {
           </div>
           <div className="row align-items-center justify-content-center mt-3">
             <nav>
-            <button onClick={() => handleNavigation("/")}>Home</button>
-            <button onClick={() => handleNavigation("/recipes")}>Recipes</button>
+              <button onClick={() => handleNavigation("/")}>Home</button>
+              <button onClick={() => handleNavigation("/recipes")}>Recipes</button>
             </nav>
           </div>
         </div>
@@ -103,7 +105,7 @@ const HomePage = () => {
             position: 'fixed',
             width: '100%',
             zIndex: 1000,
-            top: 0
+            top: 0,
           }}
         >
           {alertMessage}
@@ -132,7 +134,10 @@ const HomePage = () => {
             <div className="col-12 text-center">
               <p>Cookbook App © 2024 | Created by Daniel</p>
               <p>
-                <a href="https://github.com/Danypoz1986" className="text-white text-decoration-none">
+                <a
+                  href="https://github.com/Danypoz1986"
+                  className="text-white text-decoration-none"
+                >
                   GitHub
                 </a>
               </p>

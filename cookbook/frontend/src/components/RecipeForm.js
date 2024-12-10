@@ -29,7 +29,7 @@ const RecipeForm = ({ onSubmit, initialData, onChange }) => {
   };
 
   return (
-  <div class="form-wrapper">
+  <div className="form-wrapper">
     <form onSubmit={handleSubmit} className="container mt-4">
       <div className="mb-3">
         <label htmlFor="title" className="form-label">Title</label>

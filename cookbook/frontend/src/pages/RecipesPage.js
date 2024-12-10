@@ -12,6 +12,10 @@ const RecipesPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Cookbook - Recipes page"; // Set the title here
+  }, []);
+
+  useEffect(() => {
     fetchRecipes();
   }, []);
 
