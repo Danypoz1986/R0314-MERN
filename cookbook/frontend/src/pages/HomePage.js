@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RecipeForm from '../components/RecipeForm';
-import { getRecipes, addRecipe, updateRecipe, deleteRecipe } from '../services/api';
+import { getRecipes, addRecipe, updateRecipe } from '../services/api';
 import "../styles.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 

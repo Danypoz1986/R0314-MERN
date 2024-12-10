@@ -105,16 +105,16 @@ const RecipesPage = () => {
       </header>
 
       <div className="container mt-4">
-      <div class="search-container">
+      <div className="search-container">
   <input
     type="text"
-    class="search-bar"
+    className="search-bar"
     placeholder="Search recipes by title, category, or ingredients"
     value={searchQuery}
     onChange={(e) => setSearchQuery(e.target.value)}
   />
   <select
-    class="category-filter"
+    className="category-filter"
     value={selectedCategory}
     onChange={(e) => setSelectedCategory(e.target.value)}
   >
